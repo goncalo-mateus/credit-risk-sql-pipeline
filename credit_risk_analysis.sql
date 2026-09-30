@@ -81,4 +81,4 @@ SELECT
 FROM pagamentos p
 JOIN contratos_credito cc ON p.contrato_id = cc.contrato_id
 JOIN clientes c ON cc.cliente_id = c.cliente_id
-WHERE p.data_pagamento IS NULL;
+WHERE p.data_pagamento IS NULL
