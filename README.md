@@ -33,7 +33,9 @@ The pipeline operates on the following analytical and logical core:
    $$\text{Taxa de Aprovação} = \left( \frac{\sum \text{Pedidos Aprovados}}{\text{Total de Pedidos}} \right) \times 100$$
 
 2. **Overdue Risk Isolation (DQL Logic):**
-   $$\text{Status de Incumprimento} = \begin{cases} \text{Pendente / Em Risco}, & \text{se } \text{data\_pagamento} \text{ IS NULL} \\ \text{Regularizado}, & \text{se } \text{data\_pagamento} \text{ IS NOT NULL} \end{cases}$$
+* **Status de Incumprimento:**
+  * `Pendente / Em Risco`: se `data_pagamento IS NULL`
+  * `Regularizado`: se `data_pagamento IS NOT NULL`
 
 3. **Relational Entity Mapping:**
    $$\text{Clientes} \xrightarrow{1:N} \text{Pedidos} \xrightarrow{1:1} \text{Contratos} \xrightarrow{1:N} \text{Pagamentos}$$
